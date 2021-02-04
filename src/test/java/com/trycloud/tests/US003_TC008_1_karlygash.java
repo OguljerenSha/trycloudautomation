@@ -17,8 +17,9 @@ public class US003_TC008_1_karlygash extends TestBase {
     public void delete_file_test(){
         LogInPagePOM logInPagePOM = new LogInPagePOM();
         PageFactory.initElements(Driver.getDriver(), logInPagePOM);
-        logInPagePOM.login();
+        //logInPagePOM.login(ConfigurationReader.getProperty("username113"),ConfigurationReader.getProperty("password"));
 
+        logInPagePOM.login();
         FilesPagePOM filesPagePOM = new FilesPagePOM();
         filesPagePOM.deleteFile();
 
