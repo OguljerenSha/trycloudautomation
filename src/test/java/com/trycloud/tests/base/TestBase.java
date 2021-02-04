@@ -1,6 +1,8 @@
 package com.trycloud.tests.base;
 
 import applicationRunner.SuitStarter;
+import com.trycloud.Pages.LogInPagePOM;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
@@ -22,31 +24,18 @@ public abstract class TestBase extends SuitStarter {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-
-
-
-
     }
 
-//    @AfterClass
-//    public void teardownClass() {
-//       Driver.getDriver().close();
-//    }
+    @AfterClass
+    public void teardownClass() {
+        BrowserUtils.sleep(15);
+       Driver.getDriver().close();
+    }
 
     public void login() {
 
-
-        WebElement loginBox = Driver.getDriver().findElement(By.xpath("//input[@id='user']"));
-        loginBox.sendKeys(ConfigurationReader.getProperty("username23"));
-
-        WebElement passwordBox = Driver.getDriver().findElement(By.xpath("//input[@id='password']"));
-        passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
-
-        WebElement loginButton = Driver.getDriver().findElement(By.xpath("//input[@id='submit']"));
-        loginButton.click();
-
-
-//change
+        LogInPagePOM logInPagePOM = new LogInPagePOM();
+        logInPagePOM.login();
 
     }
 }
