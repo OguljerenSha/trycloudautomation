@@ -33,6 +33,7 @@ public class ContactPagePOM extends MenuBarPOM {
         Assert.assertTrue(Driver.getDriver().getTitle().startsWith(expectedTitle));
         BrowserUtils.sleep(3);
 
+
     }
 
 }
