@@ -1,10 +1,13 @@
 package com.trycloud.tests;
 
+import com.trycloud.Pages.LogInPagePOM;
+import com.trycloud.Pages.MenuBarPOM;
 import com.trycloud.tests.base.TestBase;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,8 +18,10 @@ public class US006_TC001_Jamila extends TestBase {
     //
     @Test
     public void createNewFolder() {
-        login();
-
+        LogInPagePOM logInPagePOM = new LogInPagePOM();
+        PageFactory.initElements(Driver.getDriver(), logInPagePOM);
+       logInPagePOM.login();
+          //  buttonFile.click();
 
         WebElement addButton = Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
         // click add button
