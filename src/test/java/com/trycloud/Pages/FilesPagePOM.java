@@ -27,16 +27,12 @@ public class FilesPagePOM extends MenuBarPOM {
     @FindBy(xpath = "//span[@class='innernametext']")
     public List<WebElement> allFileNames;
 
-    public FilesPagePOM(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
 
     public void deleteFile() {
-        MenuBarPOM menuBarPOM = new MenuBarPOM();
-        PageFactory.initElements(Driver.getDriver(), this);
-        menuBarPOM.buttonFile.click();
+        PageFactory.initElements(Driver.getDriver(), MenuBarPOM.class);//initialized it
+        buttonFile.click();
         BrowserUtils.sleep(2);
+        PageFactory.initElements(Driver.getDriver(), this);
 
         if (noFilesInHereText.isDisplayed()) {
             addIcon.click();
