@@ -21,17 +21,17 @@ public abstract class TestBase extends SuitStarter {
     public void setupClass() {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        login();
+
+
 
 
 
     }
 
-    @AfterClass
-    public void teardownClass() {
-       Driver.getDriver().close();
-    }
+//    @AfterClass
+//    public void teardownClass() {
+//       Driver.getDriver().close();
+//    }
 
     public void login() {
 
