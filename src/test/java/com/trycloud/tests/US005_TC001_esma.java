@@ -29,7 +29,7 @@ public class US005_TC001_esma extends TestBase {
         log.login(ConfigurationReader.getProperty("username53"), ConfigurationReader.getProperty("password"));
         BrowserUtils.sleep(3);
     }
-
+//
     @Test
     public void t1() {
         ContactPagePOM contactPagePOM=new ContactPagePOM();
