@@ -33,6 +33,7 @@ public class MenuBarPOM {
 
     public void buttonHomeNextCloudLogoClick() {
         buttonHomeNextCloudLogo.click();
+
     }
 
     public void buttonActivityClick() {
