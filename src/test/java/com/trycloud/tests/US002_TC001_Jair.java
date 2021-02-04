@@ -7,6 +7,7 @@ import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,11 +15,8 @@ public class US002_TC001_Jair extends TestBase {
 
     MenuBarPOM driverMenuBar = new MenuBarPOM();
 
-    @BeforeMethod
-    public void SetUpElements() {
 
-        PageFactory.initElements(Driver.getDriver(), driverMenuBar);
-    }
+
 
 
     //UserStory #002 Test Case #001 - verify users access to the main modules
@@ -30,6 +28,8 @@ public class US002_TC001_Jair extends TestBase {
     //Verify the user see the modules File:
     @Test(priority = 1)
     public void testMainModulesFile() {
+        login();
+        PageFactory.initElements(Driver.getDriver(), driverMenuBar);
         //1-Check is the modules is display
         Assert.assertTrue(driverMenuBar.buttonFile.isDisplayed());
         BrowserUtils.sleep(1);
