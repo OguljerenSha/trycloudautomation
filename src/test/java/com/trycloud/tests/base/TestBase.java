@@ -1,42 +1,41 @@
 package com.trycloud.tests.base;
 
 import applicationRunner.SuitStarter;
+import com.trycloud.Pages.LogInPagePOM;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 public abstract class TestBase extends SuitStarter {
-    public WebDriver driver;
+
 
     @BeforeClass
     public void setupClass() {
-        Driver.getDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
 
     @AfterClass
     public void teardownClass() {
-        driver.close();
+        BrowserUtils.sleep(15);
+       Driver.getDriver().close();
     }
 
-    public void login(){
-        WebElement loginBox=driver.findElement(By.xpath("//input[@id='user']"));
-        loginBox.sendKeys(ConfigurationReader.getProperty("username83"));
+    public void login() {
 
-        WebElement passwordBox=driver.findElement(By.xpath("//input[@id='password']"));
-        passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
-
-        WebElement loginButton=driver.findElement(By.xpath("//input[@id='submit-form']"));
-        loginButton.click();
-//change
+        LogInPagePOM logInPagePOM = new LogInPagePOM();
+        logInPagePOM.login();
 
     }
 }
