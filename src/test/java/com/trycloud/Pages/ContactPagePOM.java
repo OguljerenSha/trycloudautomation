@@ -16,7 +16,7 @@ public class ContactPagePOM extends MenuBarPOM {
     @FindBy(xpath = "//a[contains(@data-original-title,'Talk to')]")
     public List<WebElement> usersInContactDropDown;
 
-    //the method is created to click to one user in the contact bak
+    //the method is created to click to one user in the contact dropdown
     public void clickingToUsersInContact(int num) {
         PageFactory.initElements(Driver.getDriver(),this);
         PageFactory.initElements(Driver.getDriver(),MenuBarPOM.class);

@@ -19,14 +19,15 @@ public class US004_TC002_esma extends TestBase {
 
     @Test(description = "Validation of sending message by searching user")
     public void t1() {
+        login();
         TalkPagePOM talkPagePOM = new TalkPagePOM();
         talkPagePOM.sendingMessageThroughTalk("User50");
         Assert.assertEquals(talkPagePOM.messageClouds.get(talkPagePOM.messageClouds.size() - 2).getText(), talkPagePOM.message, "The message is not sent and displayed!!");
 
     }
 
-    @AfterClass
-    public void close() {
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void close() {
+//        Driver.closeDriver();
+//    }
 }

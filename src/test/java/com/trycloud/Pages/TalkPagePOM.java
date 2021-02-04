@@ -33,8 +33,9 @@ public class TalkPagePOM extends MenuBarPOM {
 
 
     public void sendingMessageThroughTalk(String user) {
-        PageFactory.initElements(Driver.getDriver(), MenuBarPOM.class);//initialized it
-        buttonTalk.click();//click to talk
+        MenuBarPOM menuBarPOM=new MenuBarPOM();
+        PageFactory.initElements(Driver.getDriver(), menuBarPOM);//initialized it
+        menuBarPOM.buttonTalk.click();//click to talk
         BrowserUtils.sleep(3);
         PageFactory.initElements(Driver.getDriver(), this);// initliaze this pages elements
 
