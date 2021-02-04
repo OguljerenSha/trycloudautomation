@@ -22,5 +22,5 @@ public class LogInPagePOM {
     }
     public void ForgotPassword(){
         linkForgotPassword.click();
-    }
+    }//
 }
