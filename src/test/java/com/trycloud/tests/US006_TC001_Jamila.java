@@ -16,6 +16,7 @@ public class US006_TC001_Jamila extends TestBase {
     @Test
     public void createNewFolder() {
         login();
+        //
 
         WebElement addButton = Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
         // click add button
