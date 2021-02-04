@@ -17,6 +17,7 @@ public class LogInPagePOM {
 
 
     public void login(String userName, String password){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         inputUserName.sendKeys(userName);
         inputPassword.sendKeys(password);
         buttonLogin.click();
