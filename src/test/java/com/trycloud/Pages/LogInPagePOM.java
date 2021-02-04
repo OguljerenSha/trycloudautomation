@@ -1,5 +1,7 @@
 package com.trycloud.Pages;
 
+import com.trycloud.utilities.ConfigurationReader;
+import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,7 +16,7 @@ public class LogInPagePOM {
     public WebElement linkForgotPassword;
 
 
-    public void LogIn(String userName,String password){
+    public void login(String userName, String password){
         inputUserName.sendKeys(userName);
         inputPassword.sendKeys(password);
         buttonLogin.click();
@@ -22,5 +24,12 @@ public class LogInPagePOM {
     }
     public void ForgotPassword(){
         linkForgotPassword.click();
+    }//
+
+    public void login(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        inputUserName.sendKeys(ConfigurationReader.getProperty("username23"));
+        inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
+        buttonLogin.click();
     }
 }

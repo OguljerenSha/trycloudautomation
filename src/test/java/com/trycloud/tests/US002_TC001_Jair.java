@@ -167,7 +167,7 @@ public class US002_TC001_Jair extends TestBase {
         //4-Verify function of the button if took to the actual page Galleries
         Assert.assertTrue(Driver.getDriver().getTitle().contains(buttonName));
 
-    }
+    }//
 
 
 }
