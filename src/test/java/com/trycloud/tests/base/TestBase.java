@@ -6,6 +6,7 @@ import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -16,20 +17,21 @@ import java.util.concurrent.TimeUnit;
 public abstract class TestBase extends SuitStarter {
 
 
-    @BeforeMethod
+    @BeforeClass
     public void setupClass() {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Driver.getDriver().get("https://app.trycloud.net/index.php/login");
+
+
 
 
 
     }
 
-    //@AfterMethod
-    // public void teardownClass() {
-    //    Driver.getDriver().close();
-    //}
+//    @AfterClass
+//    public void teardownClass() {
+//       Driver.getDriver().close();
+//    }
 
     public void login() {
 
