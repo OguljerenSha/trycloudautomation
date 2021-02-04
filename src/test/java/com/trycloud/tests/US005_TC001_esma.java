@@ -43,6 +43,7 @@ public class US005_TC001_esma extends TestBase {
         contactPagePOM.clickingToUsersInContact(1);
         contactPagePOM.clickingToUsersInContact(23);
         contactPagePOM.clickingToUsersInContact(24);
+        //change
     }
 
     @AfterMethod
