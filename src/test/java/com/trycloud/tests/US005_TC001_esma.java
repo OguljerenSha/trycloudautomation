@@ -30,7 +30,7 @@ public class US005_TC001_esma extends TestBase {
         BrowserUtils.sleep(3);
     }
 
-    @Test
+    @Test(description = "Validation of users can access talk module through contact dropdown")
     public void t1() {
         ContactPagePOM contactPagePOM=new ContactPagePOM();
         contactPagePOM.clickingToUsersInContact(0);
