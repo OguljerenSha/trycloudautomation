@@ -10,10 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class FilesPagePOM {
+public class FilesPagePOM extends MenuBarPOM {
 
-    @FindBy(xpath = "//ul[@id='appmenu']/li[1]")
-    public WebElement buttonFile;
+   // @FindBy(xpath = "//ul[@id='appmenu']/li[1]")
+   // public WebElement buttonFile;
     @FindBy(xpath = "//a[@class='button new']")
     public WebElement addIcon;
     @FindBy(xpath = "(//span[@class='icon icon-more'])[2]")
@@ -32,8 +32,9 @@ public class FilesPagePOM {
 
     public void deleteFile() {
 //        PageFactory.initElements(Driver.getDriver(), MenuBarPOM.class);//initialized it
-//        buttonFile.click();
-        PageFactory.initElements(Driver.getDriver(), this);
+
+      //  PageFactory.initElements(Driver.getDriver(), this);
+
         BrowserUtils.sleep(2);
         buttonFile.click();
         BrowserUtils.sleep(2);

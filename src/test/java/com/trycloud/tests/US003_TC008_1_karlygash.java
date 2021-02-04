@@ -14,15 +14,15 @@ public class US003_TC008_1_karlygash extends TestBase {
 
 
     @Test(description = "Validation of deleting file by action icon")
-    public void delete_file_test(){
+    public void delete_file_test() {
         LogInPagePOM logInPagePOM = new LogInPagePOM();
         PageFactory.initElements(Driver.getDriver(), logInPagePOM);
         //logInPagePOM.login(ConfigurationReader.getProperty("username113"),ConfigurationReader.getProperty("password"));
-
-        logInPagePOM.login();
+        login();
+        //logInPagePOM.login();
         FilesPagePOM filesPagePOM = new FilesPagePOM();
+        PageFactory.initElements(Driver.getDriver(), filesPagePOM);
         filesPagePOM.deleteFile();
-
 
 
     }
