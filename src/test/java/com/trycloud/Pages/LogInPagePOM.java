@@ -18,6 +18,7 @@ public class LogInPagePOM {
         inputUserName.sendKeys(userName);
         inputPassword.sendKeys(password);
         buttonLogin.click();
+
     }
     public void ForgotPassword(){
         linkForgotPassword.click();
