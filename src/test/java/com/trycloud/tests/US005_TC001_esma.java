@@ -29,7 +29,7 @@ public class US005_TC001_esma extends TestBase {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         LogInPagePOM log = new LogInPagePOM();
         PageFactory.initElements(Driver.getDriver(), log);
-        log.LogIn(ConfigurationReader.getProperty("username53"), ConfigurationReader.getProperty("password"));
+        log.login(ConfigurationReader.getProperty("username53"), ConfigurationReader.getProperty("password"));
         BrowserUtils.sleep(3);
     }
 
