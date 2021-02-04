@@ -12,6 +12,7 @@ public class LogInPagePOM {
    public WebElement inputPassword;
     @FindBy(id = "submit")
     public WebElement buttonLogin;
+
     @FindBy(id = "lost-password")
     public WebElement linkForgotPassword;
 

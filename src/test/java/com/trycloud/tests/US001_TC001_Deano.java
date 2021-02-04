@@ -1,16 +1,21 @@
 package com.trycloud.tests;
 
+import com.trycloud.Pages.LogInPagePOM;
+import com.trycloud.tests.base.TestBase;
+import com.trycloud.utilities.ConfigurationReader;
+import com.trycloud.utilities.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class US001_TC001_Deano {
+public class US001_TC001_Deano extends TestBase {
 
     /*
     Test case #1 - verify user login successfully
@@ -23,32 +28,14 @@ public class US001_TC001_Deano {
  hello
      */
 
-    @Test
+    @Test (priority = 1,description = "Testing login function with user name username23")
     public void test1U1(){
 
-        WebDriverManager.chromedriver().setup();
+        LogInPagePOM driverLogin = new LogInPagePOM();
+        PageFactory.initElements(Driver.getDriver(),driverLogin);
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-
-        /*driver.get("https://trycloud.net/");
-
-        driver.findElement(By.id("menu-item-47")).click();
-
-         */
-
-        driver.get("http://qa.trycloud.net/index.php/login?redirect_url=/index.php/apps/files/");
-
-        driver.findElement(By.id("user")).sendKeys("User23");
-
-
-        driver.findElement(By.id("password")).sendKeys("Userpass123");
-
-        driver.findElement(By.id("submit-form")).click();
-
-        driver.close();
-
+       driverLogin.login(ConfigurationReader.getProperty("username23"),ConfigurationReader.getProperty("password"));
 
     }
 
