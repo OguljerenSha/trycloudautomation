@@ -21,9 +21,6 @@ import org.testng.annotations.Test;
 
 public class US005_TC001_esma extends TestBase {
 
-
-
-
     @BeforeMethod
     public void setUpClass() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
@@ -32,9 +29,6 @@ public class US005_TC001_esma extends TestBase {
         log.login(ConfigurationReader.getProperty("username53"), ConfigurationReader.getProperty("password"));
         BrowserUtils.sleep(3);
     }
-
-
-
 
     @Test
     public void t1() {
